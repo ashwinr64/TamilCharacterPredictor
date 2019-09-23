@@ -1,4 +1,4 @@
-const URL = 'http://quiet-chamber-18884.herokuapp.com/'
+const URL = 'https://tamilcharpred.herokuapp.com/'
 
 function setup() {
   var canvas = createCanvas(256, 256);
@@ -15,43 +15,44 @@ function draw() {
   }
 }
 
-$("#predict").click(function () {
-  var button = $(this);
-  button.html("<i class=\"fas fa-spinner fa-spin\"></i> Predicting");
-  button.attr("disabled", true);
+$(document).ready(function () {
+  $("#predict").click(function () {
+    var button = $(this);
+    button.html("<i class=\"fas fa-spinner fa-spin\"></i> Predicting");
+    button.attr("disabled", true);
 
-  saveFrames('out', 'png', 1, 1, data => {
-    payload = JSON.stringify({
-      "img": data[0]['imageData']
-    });
-    $.ajax({
-      type: 'POST',
-      url: URL,
-      headers: {
-        'accept': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-      data: payload,
-      success: function (data) {
-        // vals[0] = id && vals[1] = prediction
-        vals = Object.values(data);
+    saveFrames('out', 'png', 1, 1, data => {
+      payload = JSON.stringify({
+        "img": data[0]['imageData']
+      });
+      $.ajax({
+        type: 'POST',
+        url: URL,
+        headers: {
+          'accept': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        data: payload,
+        success: function (data) {
+          vals = Object.values(data);
 
-        $("#predS").html(vals[1]);
-        $("#predH").show();
-        button.html("Predict");
-        button.attr("disabled", false);
-      },
-      error: function (e) {
-        button.html("Predict");
-        button.attr("disabled", false);
-      },
-      dataType: "json",
-      contentType: "application/json"
+          $("#predS").html(vals[0]);
+          $("#predH").show();
+          button.html("Predict");
+          button.attr("disabled", false);
+        },
+        error: function (e) {
+          button.html("Predict");
+          button.attr("disabled", false);
+        },
+        dataType: "json",
+        contentType: "application/json"
+      });
     });
   });
-});
 
-$("#reset").click(function () {
-  background(255);
-  $("#predH").hide();
+  $("#reset").click(function () {
+    background(255);
+    $("#predH").hide();
+  });
 });
