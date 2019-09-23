@@ -1,0 +1,75 @@
+---
+permalink: /
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <div class="row justify-content-center">
+            <h4>Handwritten Tamil Character Recognition Using Convolutional Neural Networks</h4>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-md-3">
+                <p id="desc">A CNN trained on the <a href="ghub link">hpl-tamil-iso-char-offline</a> dataset by HP using
+                    the <a href="https://www.fast.ai">FastAI</a> library.The
+                    model can classify 156 characters</p>
+                <p>I'm using a model trained on the resnet50 architecture with an accuracy of 96%!</p>
+                <p>Make use of the complete canvas for best results.</p>
+                <p><a href="https://github.com/ashwinr64/TamilCharacterPredictor"><i class="fas fa-code-branch"></i>
+                        Check the code on GitHub</a><br>
+                    <a href="https://github.com/ashwinr64/"><i class="fab fa-github"></i> Ashwin Ramesh</a>
+                </p>
+
+            </div>
+            <div class="col-md-9">
+                <div id="drawingBoard">
+                    <!-- Our sketch goes here! -->
+                </div>
+                <div class="btns">
+                    <button type="button" class="btn btn-primary" id="predict">Predict</button>
+                    <button type="button" class="btn btn-danger" id="reset">Reset</button>
+                </div>
+                <p id="predH">You seem to have drawn the letter: <span id="predS"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <!-- p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js" crossorigin="anonymous"></script>
+    <script src="sketch.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</body>
+
+</html>

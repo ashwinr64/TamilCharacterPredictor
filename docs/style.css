@@ -1,0 +1,28 @@
+#drawingBoard {
+    /* border: 2px solid; */
+    padding-top: 100px;
+}
+
+#desc {
+    padding-top: 100px;
+    color:rgb(224, 224, 224);
+}
+body {
+    background-color: #333;
+    height: 100%;
+    color: rgb(255, 255, 255);
+}
+
+a,
+a:hover
+{
+    text-decoration: underline;
+    color: white;
+}
+.btns {
+    padding: 20px 20px;
+}
+
+#predH {
+    display: none;
+}
