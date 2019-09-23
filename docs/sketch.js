@@ -1,4 +1,4 @@
-const URL = 'http://0.0.0.0:5000/'
+const URL = 'http://quiet-chamber-18884.herokuapp.com/'
 
 function setup() {
   var canvas = createCanvas(256, 256);
